@@ -11,7 +11,7 @@ export default function Logo({ variant = "horizontal", height = 40, className = 
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 320 52"
+        viewBox="0 0 380 58"
         height={height}
         width="auto"
         className={className}
@@ -24,13 +24,15 @@ export default function Logo({ variant = "horizontal", height = 40, className = 
           </linearGradient>
         </defs>
         {/* NEXT */}
-        <text x="0" y="36" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="40" fill="#ffffff" letterSpacing="1">NEXT</text>
+        <text x="0" y="34" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="38" fill="#ffffff" letterSpacing="1">NEXT</text>
         {/* LEVEL */}
-        <text x="114" y="36" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="40" fill="url(#gl-h)" letterSpacing="1">LEVEL</text>
-        {/* Separador · */}
-        <text x="106" y="36" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="28" fill="#333">·</text>
-        {/* Stick: línea + curva blade */}
-        <path d="M0 46 L286 46 Q306 46 306 28" stroke="url(#gl-h)" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+        <text x="110" y="34" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="38" fill="url(#gl-h)" letterSpacing="1">LEVEL</text>
+        {/* Separador vertical */}
+        <line x1="246" y1="8" x2="246" y2="40" stroke="#2a2a2a" strokeWidth="1.5" />
+        {/* ACADEMY */}
+        <text x="256" y="28" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="700" fontSize="11" fill="#666666" letterSpacing="3">ACADEMY</text>
+        {/* Stick: línea casi recta, curva mínima al final — como hockey hielo */}
+        <path d="M0 44 L274 44 L284 44 Q292 44 292 36" stroke="url(#gl-h)" strokeWidth="3" strokeLinecap="round" fill="none" />
       </svg>
     )
   }
