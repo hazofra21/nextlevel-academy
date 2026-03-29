@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 110" width="240" height="110">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00C8FF"/>
+      <stop offset="100%" style="stop-color:#0080FF"/>
+    </linearGradient>
+  </defs>
+  <!-- NEXT -->
+  <text
+    x="4"
+    y="46"
+    font-family="'Arial Black', 'Helvetica Neue', sans-serif"
+    font-weight="900"
+    font-size="48"
+    fill="#ffffff"
+    letter-spacing="2"
+  >NEXT</text>
+  <!-- LEVEL con gradiente -->
+  <text
+    x="4"
+    y="90"
+    font-family="'Arial Black', 'Helvetica Neue', sans-serif"
+    font-weight="900"
+    font-size="48"
+    fill="url(#grad)"
+    letter-spacing="2"
+  >LEVEL</text>
+  <!-- Stick: línea horizontal + curva al final (blade del stick) -->
+  <path
+    d="M4 100 L210 100 Q228 100 228 84"
+    stroke="url(#grad)"
+    stroke-width="4"
+    stroke-linecap="round"
+    fill="none"
+  />
+</svg>

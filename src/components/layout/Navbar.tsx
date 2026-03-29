@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,13 +24,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <span className="font-display text-2xl font-bold tracking-widest text-white">
-            NEXT<span className="text-gradient">LEVEL</span>
-          </span>
-          <span className="hidden sm:block text-[10px] text-[#888] font-medium tracking-[0.3em] uppercase border-l border-[#333] pl-3">
-            Academy
-          </span>
+        <Link href="/" className="flex items-center">
+          <Logo variant="horizontal" height={36} />
         </Link>
 
         {/* Links desktop */}

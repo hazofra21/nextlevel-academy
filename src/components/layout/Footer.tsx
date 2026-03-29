@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
@@ -7,10 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Logo */}
           <div className="md:col-span-1">
-            <div className="font-display text-2xl font-bold tracking-widest mb-4">
-              NEXT<span className="text-gradient">LEVEL</span>
-              <div className="text-[10px] text-[#555] font-sans normal-case tracking-[0.3em] mt-0.5">ACADEMY</div>
-            </div>
+            <Logo variant="vertical" height={64} className="mb-2" />
             <p className="text-[#444] text-sm leading-relaxed">
               Academia online de hockey hielo y línea de alto rendimiento.
             </p>
