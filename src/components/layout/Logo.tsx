@@ -11,7 +11,7 @@ export default function Logo({ variant = "horizontal", height = 40, className = 
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 380 58"
+        viewBox="0 0 430 54"
         height={height}
         width="auto"
         className={className}
@@ -24,25 +24,25 @@ export default function Logo({ variant = "horizontal", height = 40, className = 
           </linearGradient>
         </defs>
         {/* NEXT */}
-        <text x="0" y="34" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="38" fill="#ffffff" letterSpacing="1">NEXT</text>
+        <text x="0" y="38" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="40" fill="#ffffff" letterSpacing="1">NEXT</text>
         {/* LEVEL */}
-        <text x="110" y="34" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="38" fill="url(#gl-h)" letterSpacing="1">LEVEL</text>
+        <text x="112" y="38" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="40" fill="url(#gl-h)" letterSpacing="1">LEVEL</text>
         {/* Separador vertical */}
-        <line x1="246" y1="8" x2="246" y2="40" stroke="#2a2a2a" strokeWidth="1.5" />
-        {/* ACADEMY */}
-        <text x="256" y="28" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="700" fontSize="11" fill="#666666" letterSpacing="3">ACADEMY</text>
-        {/* Stick: línea casi recta, curva mínima al final — como hockey hielo */}
-        <path d="M0 44 L274 44 L284 44 Q292 44 292 36" stroke="url(#gl-h)" strokeWidth="3" strokeLinecap="round" fill="none" />
+        <line x1="254" y1="12" x2="254" y2="42" stroke="#2a2a2a" strokeWidth="1.5" />
+        {/* ACADEMY — misma baseline que NEXT LEVEL */}
+        <text x="264" y="38" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="700" fontSize="13" fill="#666666" letterSpacing="3.5">ACADEMY</text>
+        {/* Stick — cubre todo el ancho, curva pequeña al final igual que el original */}
+        <path d="M0 48 L400 48 Q418 48 418 30" stroke="url(#gl-h)" strokeWidth="3" strokeLinecap="round" fill="none" />
       </svg>
     )
   }
 
-  // Versión vertical — dos líneas (hero, splash)
+  // Versión vertical — dos líneas (footer, hero, splash)
   if (variant === "vertical") {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 220 110"
+        viewBox="0 0 230 126"
         height={height}
         width="auto"
         className={className}
@@ -58,8 +58,10 @@ export default function Logo({ variant = "horizontal", height = 40, className = 
         <text x="2" y="46" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="48" fill="#ffffff" letterSpacing="2">NEXT</text>
         {/* LEVEL */}
         <text x="2" y="90" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="900" fontSize="48" fill="url(#gl-v)" letterSpacing="2">LEVEL</text>
-        {/* Stick */}
-        <path d="M2 100 L196 100 Q214 100 214 82" stroke="url(#gl-v)" strokeWidth="4" strokeLinecap="round" fill="none" />
+        {/* Stick — cubre todo el ancho, curva pequeña al final */}
+        <path d="M2 100 L210 100 Q226 100 226 84" stroke="url(#gl-v)" strokeWidth="4" strokeLinecap="round" fill="none" />
+        {/* ACADEMY — debajo del stick, alineado a la izquierda */}
+        <text x="2" y="120" fontFamily="'Arial Black','Helvetica Neue',sans-serif" fontWeight="700" fontSize="12" fill="#666666" letterSpacing="5">ACADEMY</text>
       </svg>
     )
   }
