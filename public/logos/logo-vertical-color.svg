@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 110" width="220" height="110">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00C8FF"/>
+      <stop offset="100%" stop-color="#0080FF"/>
+    </linearGradient>
+  </defs>
+  <text x="2" y="46" font-family="'Arial Black','Helvetica Neue',sans-serif" font-weight="900" font-size="48" fill="#ffffff" letter-spacing="2">NEXT</text>
+  <text x="2" y="90" font-family="'Arial Black','Helvetica Neue',sans-serif" font-weight="900" font-size="48" fill="url(#g)" letter-spacing="2">LEVEL</text>
+  <path d="M2 100 L196 100 Q214 100 214 82" stroke="url(#g)" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>
