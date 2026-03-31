@@ -6,5 +6,5 @@
     </linearGradient>
   </defs>
   <text x="4" y="42" font-family="'Arial Black','Helvetica Neue',sans-serif" font-weight="900" font-size="38" fill="url(#g)">NL</text>
-  <path d="M4 50 L48 50 Q56 50 56 42" stroke="url(#g)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <path d="M4 50 L46 50 L52 43" stroke="url(#g)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>

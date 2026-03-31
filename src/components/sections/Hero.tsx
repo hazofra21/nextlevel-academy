@@ -1,15 +1,55 @@
-import Link from "next/link";
+"use client"
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import Image from "next/image"
+
+const BG_IMAGES = [
+  "/backgrounds/bg-04.png",
+  "/backgrounds/bg-02.png",
+  "/backgrounds/bg-06.png",
+]
 
 export default function Hero() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % BG_IMAGES.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Fondo con gradiente dramático — reemplazar por video cuando esté disponible */}
-      <div className="absolute inset-0 bg-[#050505]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#001a2e] via-[#050505] to-[#050505]" />
-        {/* Efecto de luz accent */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-[#00C8FF]/5 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#0080FF]/5 blur-[100px] pointer-events-none" />
-      </div>
+
+      {/* Fondos rotativos — fijos al scroll */}
+      {BG_IMAGES.map((src, i) => (
+        <div
+          key={src}
+          className="fixed inset-0 -z-20 transition-opacity duration-1000"
+          style={{ opacity: i === current ? 1 : 0 }}
+        >
+          <Image
+            src={src}
+            alt=""
+            fill
+            className="object-cover object-center brightness-[1.22] contrast-[1.06] saturate-[1.08]"
+            priority={i === 0}
+          />
+        </div>
+      ))}
+
+      {/* Gradientes suaves de apoyo, sin apagar la foto */}
+      <div className="fixed inset-0 -z-10" style={{
+        background: [
+          "radial-gradient(circle at center, rgba(5,5,5,0.03) 0%, rgba(5,5,5,0.14) 75%, rgba(5,5,5,0.22) 100%)",
+          "linear-gradient(to bottom, rgba(5,5,5,0.1) 0%, rgba(5,5,5,0.015) 22%, rgba(5,5,5,0.015) 68%, rgba(5,5,5,0.16) 100%)"
+        ].join(", ")
+      }} />
+
+      {/* Luces accent */}
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-[#00C8FF]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#0080FF]/5 blur-[100px] pointer-events-none" />
 
       {/* Grid decorativo */}
       <div
@@ -22,6 +62,7 @@ export default function Hero() {
 
       {/* Contenido */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 flex flex-col items-center text-center">
+        <div className="w-full max-w-5xl rounded-[2rem] border border-white/8 bg-[#050505]/18 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.28)] backdrop-blur-[2px] sm:px-10 sm:py-10">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 border border-[#00C8FF]/30 bg-[#00C8FF]/5 rounded-full px-4 py-1.5 mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-[#00C8FF] animate-pulse" />
@@ -73,6 +114,19 @@ export default function Hero() {
             </div>
           ))}
         </div>
+
+        {/* Indicadores de imagen */}
+        <div className="flex gap-2 mt-8">
+          {BG_IMAGES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+              style={{ backgroundColor: i === current ? "#00C8FF" : "#333" }}
+            />
+          ))}
+        </div>
+        </div>
       </div>
 
       {/* Flecha scroll */}
@@ -83,5 +137,5 @@ export default function Hero() {
         </svg>
       </div>
     </section>
-  );
+  )
 }

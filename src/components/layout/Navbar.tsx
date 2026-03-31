@@ -30,16 +30,16 @@ export default function Navbar() {
 
         {/* Links desktop */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="#programas" className="text-sm text-[#aaa] hover:text-white transition-colors tracking-wider uppercase font-medium">
+          <Link href="/programas" className="text-sm text-[#aaa] hover:text-white transition-colors tracking-wider uppercase font-medium">
             Programas
           </Link>
-          <Link href="#tecnificaciones" className="text-sm text-[#aaa] hover:text-white transition-colors tracking-wider uppercase font-medium">
+          <Link href="/tecnificaciones" className="text-sm text-[#aaa] hover:text-white transition-colors tracking-wider uppercase font-medium">
             Tecnificaciones
           </Link>
-          <Link href="#tienda" className="text-sm text-[#aaa] hover:text-white transition-colors tracking-wider uppercase font-medium">
+          <Link href="/tienda" className="text-sm text-[#aaa] hover:text-white transition-colors tracking-wider uppercase font-medium">
             Tienda
           </Link>
-          <Link href="#sobre-nosotros" className="text-sm text-[#aaa] hover:text-white transition-colors tracking-wider uppercase font-medium">
+          <Link href="/nosotros" className="text-sm text-[#aaa] hover:text-white transition-colors tracking-wider uppercase font-medium">
             Nosotros
           </Link>
         </div>
@@ -68,10 +68,10 @@ export default function Navbar() {
       {/* Menú mobile */}
       {menuOpen && (
         <div className="md:hidden bg-[#0a0a0a] border-t border-[#222] px-6 py-6 flex flex-col gap-5">
-          <Link href="#programas" onClick={() => setMenuOpen(false)} className="text-sm text-[#aaa] hover:text-white uppercase tracking-wider font-medium">Programas</Link>
-          <Link href="#tecnificaciones" onClick={() => setMenuOpen(false)} className="text-sm text-[#aaa] hover:text-white uppercase tracking-wider font-medium">Tecnificaciones</Link>
-          <Link href="#tienda" onClick={() => setMenuOpen(false)} className="text-sm text-[#aaa] hover:text-white uppercase tracking-wider font-medium">Tienda</Link>
-          <Link href="#sobre-nosotros" onClick={() => setMenuOpen(false)} className="text-sm text-[#aaa] hover:text-white uppercase tracking-wider font-medium">Nosotros</Link>
+          <Link href="/programas" onClick={() => setMenuOpen(false)} className="text-sm text-[#aaa] hover:text-white uppercase tracking-wider font-medium">Programas</Link>
+          <Link href="/tecnificaciones" onClick={() => setMenuOpen(false)} className="text-sm text-[#aaa] hover:text-white uppercase tracking-wider font-medium">Tecnificaciones</Link>
+          <Link href="/tienda" onClick={() => setMenuOpen(false)} className="text-sm text-[#aaa] hover:text-white uppercase tracking-wider font-medium">Tienda</Link>
+          <Link href="/nosotros" onClick={() => setMenuOpen(false)} className="text-sm text-[#aaa] hover:text-white uppercase tracking-wider font-medium">Nosotros</Link>
           <div className="flex flex-col gap-3 pt-2 border-t border-[#222]">
             <Link href="/login" className="btn-outline px-5 py-3 rounded text-sm text-center">Entrar</Link>
             <Link href="/login" className="btn-primary px-5 py-3 rounded text-sm text-center">Empieza Ahora</Link>

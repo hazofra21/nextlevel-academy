@@ -47,7 +47,7 @@ const valores = [
 
 export default function ValorSection() {
   return (
-    <section className="py-24 bg-[#050505]">
+    <section className="py-24 bg-[#050505]/66 backdrop-blur-[2px]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col items-start mb-16">

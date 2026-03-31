@@ -3,14 +3,36 @@
 import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 
-export default function LoginForm() {
+interface LoginFormProps {
+  nextPath: string;
+  error?: string;
+}
+
+function getErrorMessage(error?: string) {
+  if (error === "inactive") {
+    return "Tu cuenta está desactivada. Contacta con NextLevel si crees que es un error.";
+  }
+
+  if (error === "auth") {
+    return "No se ha podido completar el acceso con Google.";
+  }
+
+  if (error === "profile") {
+    return "No se ha podido sincronizar tu perfil de usuario.";
+  }
+
+  return null;
+}
+
+export default function LoginForm({ nextPath, error }: LoginFormProps) {
   const supabase = createClient();
+  const errorMessage = getErrorMessage(error);
 
   const loginConGoogle = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextPath)}`,
       },
     });
   };
@@ -39,6 +61,12 @@ export default function LoginForm() {
             <p className="text-[#555] text-sm">Entrena. Evoluciona. Domina.</p>
           </div>
 
+          {errorMessage ? (
+            <div className="mb-6 rounded-2xl border border-[#ff4d4f]/20 bg-[#ff4d4f]/8 px-4 py-3 text-sm text-[#ffb5b6]">
+              {errorMessage}
+            </div>
+          ) : null}
+
           {/* Botón Google */}
           <button
             onClick={loginConGoogle}
@@ -55,11 +83,11 @@ export default function LoginForm() {
 
           <p className="text-center text-[#333] text-xs mt-6 leading-relaxed">
             Al acceder aceptas nuestros{" "}
-            <Link href="#" className="text-[#555] hover:text-white transition-colors">
+            <Link href="/terminos" className="text-[#555] hover:text-white transition-colors">
               Términos de uso
             </Link>{" "}
             y{" "}
-            <Link href="#" className="text-[#555] hover:text-white transition-colors">
+            <Link href="/privacidad" className="text-[#555] hover:text-white transition-colors">
               Política de privacidad
             </Link>
           </p>

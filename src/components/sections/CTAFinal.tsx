@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function CTAFinal() {
   return (
-    <section className="py-32 bg-[#050505] relative overflow-hidden">
+    <section className="py-32 bg-[#050505]/66 backdrop-blur-[2px] relative overflow-hidden">
       {/* Fondo */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#001525] to-[#050505]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#00C8FF]/5 blur-[120px] rounded-full pointer-events-none" />
